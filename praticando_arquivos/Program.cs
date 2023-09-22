@@ -14,6 +14,12 @@
                 string[] lines = dt.Split(", ");
                 data.Add(lines);
             }
+
+            Console.Write("Qual time deseja pesquisar? ");
+            string time = Console.ReadLine();
+
+            data.Where(dt => dt[2].Equals(time) && int.Parse(dt[0]) >= 2006 && int.Parse(dt[1]) >= 17)
+                .ToList();
         }
 
         Console.ReadKey();
