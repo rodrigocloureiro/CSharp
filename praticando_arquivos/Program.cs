@@ -19,7 +19,15 @@
             string time = Console.ReadLine();
 
             data.Where(dt => dt[2].Equals(time) && int.Parse(dt[0]) >= 2006 && int.Parse(dt[1]) >= 17)
-                .ToList();
+                .ToList()
+                .ForEach(data =>
+                {
+                    foreach (string dt in data)
+                    {
+                        Console.Write(dt + " | ");
+                    }
+                    Console.WriteLine();
+                });
         }
 
         Console.ReadKey();
